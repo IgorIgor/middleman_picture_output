@@ -13,6 +13,8 @@ describe Middleman::PictureOutput::Helpers do
     let(:photos_html) { helpers.photos('photo_cook') }
 
     it 'contains all images in img tag' do
+      require 'middleman/picture_output/helpers'
+
       expect( photos_html ).to match(/<img src=\"images\/photo_cook\/test_img_1.jpg\"/)
       expect( photos_html ).to match(/<img src=\"images\/photo_cook\/test_img_2.jpg\"/)
       expect( photos_html ).to match(/<img src=\"images\/photo_cook\/test_img_3.jpg\"/)
